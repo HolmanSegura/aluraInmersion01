@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,6 +16,9 @@ public class Main {
                 """;
         double mediaEvaluacion = (4.5 + 4.8 + 3) / 3;
         double mediaEvaluacionUsuario = 0 ;
+        String comentario = "";
+        int numeroDeComentarios = 1;
+        ArrayList comentarios = new ArrayList();
 
         //Impresion de variables
         System.out.println("Bienvenidos a la inmersion en java");
@@ -34,11 +38,20 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             System.out.println("Por favor ingresa tu puntuacion para matrix: ");
             double notaPelicula = teclado.nextDouble();
+            teclado.nextLine();
             mediaEvaluacionUsuario = mediaEvaluacionUsuario + notaPelicula;
         }
 
         System.out.println("Promedio dado: " + mediaEvaluacionUsuario / 3);
 
+        //ciclo while para ingresar comentarios de la pelicula
+        while (numeroDeComentarios <= 3) {
+            System.out.println("Ingrese el comentario numero " + numeroDeComentarios);
+            comentario = teclado.nextLine();
+            comentarios.add(comentario);
+            numeroDeComentarios++;
+        }
 
+        System.out.println(comentarios);
     }
 }
